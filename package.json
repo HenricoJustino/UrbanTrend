@@ -1,0 +1,13 @@
+{
+    "name": "urbantrend-bot",
+    "version": "1.0.0",
+    "description": "Bot de WhatsApp para gerenciamento de encomendas",
+    "main": "bot.js",
+    "scripts": {
+        "start": "node bot.js"
+    },
+    "dependencies": {
+        "@wppconnect-team/wppconnect": "^1.25.0",
+        "mysql2": "^3.6.5"
+    }
+} 

@@ -1,0 +1,55 @@
+2025/04/13-13:19:21.000 1458e Reusing MANIFEST /home/henrico/Documentos/Documentos/Atividades do IF/Sistemas de Informação/Período I/Gestão e Empreendedorismo/SEF/urbantrend/tokens/whatsapp-session/Default/IndexedDB/https_web.whatsapp.com_0.indexeddb.leveldb/MANIFEST-002771
+2025/04/13-13:19:21.002 1458e Recovering log #3002
+2025/04/13-13:19:21.038 1458e Reusing old log /home/henrico/Documentos/Documentos/Atividades do IF/Sistemas de Informação/Período I/Gestão e Empreendedorismo/SEF/urbantrend/tokens/whatsapp-session/Default/IndexedDB/https_web.whatsapp.com_0.indexeddb.leveldb/003002.log 
+2025/04/13-13:19:21.440 1458f Compacting 1@1 + 5@2 files
+2025/04/13-13:19:21.520 1458f Generated table #3017@1: 76544 keys, 2226041 bytes
+2025/04/13-13:19:21.594 1458f Generated table #3018@1: 95456 keys, 2247186 bytes
+2025/04/13-13:19:21.669 1458f Generated table #3019@1: 100045 keys, 2251135 bytes
+2025/04/13-13:19:21.750 1458f Generated table #3020@1: 95681 keys, 2357467 bytes
+2025/04/13-13:19:21.814 1458f Generated table #3021@1: 11120 keys, 2615847 bytes
+2025/04/13-13:19:21.814 1458f Compacted 1@1 + 5@2 files => 11697676 bytes
+2025/04/13-13:19:21.818 1458f compacted to: files[ 0 0 32 0 0 0 0 ]
+2025/04/13-13:19:21.819 1458f Delete type=2 #3001
+2025/04/13-13:19:21.819 1458f Delete type=2 #3000
+2025/04/13-13:19:21.819 1458f Delete type=2 #2998
+2025/04/13-13:19:21.819 1458f Delete type=2 #3004
+2025/04/13-13:19:21.819 1458f Delete type=2 #2997
+2025/04/13-13:19:21.819 1458f Delete type=2 #2999
+2025/04/13-13:19:22.900 1458e Level-0 table #3023: started
+2025/04/13-13:19:22.916 1458e Level-0 table #3023: 355529 bytes OK
+2025/04/13-13:19:22.919 1458e Delete type=0 #3002
+2025/04/13-13:19:22.920 1458e Manual compaction at level-0 from '\x00:\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00;\x00\x00\x00' @ 0 : 0; will stop at '\x00:\x00\x00\x05' @ 6703728 : 1
+2025/04/13-13:19:22.920 1458e Compacting 1@0 + 0@1 files
+2025/04/13-13:19:22.928 1458e Generated table #3024@0: 6931 keys, 64300 bytes
+2025/04/13-13:19:22.935 1458e Generated table #3025@0: 5399 keys, 142639 bytes
+2025/04/13-13:19:22.936 1458e Compacted 1@0 + 0@1 files => 206939 bytes
+2025/04/13-13:19:22.938 1458e compacted to: files[ 0 2 32 0 0 0 0 ]
+2025/04/13-13:19:22.938 1458e Delete type=2 #3023
+2025/04/13-13:19:22.939 1458e Manual compaction at level-0 from '\x00:\x00\x00\x05' @ 6703728 : 1 .. '\x00;\x00\x00\x00' @ 0 : 0; will stop at (end)
+2025/04/13-13:19:25.862 1458f Compacting 1@1 + 5@2 files
+2025/04/13-13:19:25.991 1458f Generated table #3026@1: 76628 keys, 2225593 bytes
+2025/04/13-13:19:26.111 1458f Generated table #3027@1: 95456 keys, 2247184 bytes
+2025/04/13-13:19:26.204 1458f Generated table #3028@1: 100162 keys, 2253565 bytes
+2025/04/13-13:19:26.308 1458f Generated table #3029@1: 95549 keys, 2353655 bytes
+2025/04/13-13:19:26.375 1458f Generated table #3030@1: 11120 keys, 2615886 bytes
+2025/04/13-13:19:26.375 1458f Compacted 1@1 + 5@2 files => 11695883 bytes
+2025/04/13-13:19:26.379 1458f compacted to: files[ 0 1 32 0 0 0 0 ]
+2025/04/13-13:19:26.380 1458f Delete type=2 #3020
+2025/04/13-13:19:26.380 1458f Delete type=2 #3018
+2025/04/13-13:19:26.380 1458f Delete type=2 #3024
+2025/04/13-13:19:26.381 1458f Delete type=2 #3021
+2025/04/13-13:19:26.381 1458f Delete type=2 #3019
+2025/04/13-13:19:26.381 1458f Delete type=2 #3017
+2025/04/13-13:19:27.014 1458f Compacting 1@1 + 10@2 files
+2025/04/13-13:19:27.111 1458f Generated table #3031@1: 53167 keys, 2264923 bytes
+2025/04/13-13:19:27.161 1458f Generated table #3032@1: 17399 keys, 2164583 bytes
+2025/04/13-13:19:27.195 1458f Generated table #3033@1: 10197 keys, 2136659 bytes
+2025/04/13-13:19:27.272 1458f Generated table #3034@1: 63895 keys, 2204845 bytes
+2025/04/13-13:19:27.368 1458f Generated table #3035@1: 107349 keys, 2257980 bytes
+2025/04/13-13:19:27.464 1458f Generated table #3036@1: 105509 keys, 2255891 bytes
+2025/04/13-13:19:27.574 1458f Generated table #3037@1: 105534 keys, 2255217 bytes
+2025/04/13-13:19:27.745 1458f Generated table #3038@1: 105507 keys, 2255245 bytes
+2025/04/13-13:19:27.891 1458f Generated table #3039@1: 105029 keys, 2255727 bytes
+2025/04/13-13:19:27.940 1458f Generated table #3040@1: 52984 keys, 1151637 bytes
+2025/04/13-13:19:27.940 1458f Compacted 1@1 + 10@2 files => 21202707 bytes
+2025/04/13-13:19:27.943 1458f compacted to: files[ 0 0 32 0 0 0 0 ]
