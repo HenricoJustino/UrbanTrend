@@ -13,12 +13,11 @@ const pool = mysql.createPool({
 
 // Função para verificar e enviar lembretes de carrinho abandonado
 async function verificarCarrinhosAbandonados(client) {
-    // Primeiro, buscar usuários com último acesso há mais de 5 dias e que ainda não foram lembrados
+    // Buscar usuários com último acesso há mais de 5 dias
     const sqlUsuarios = `
-        SELECT id, nome, telefone, produtos_no_carrinho
+        SELECT id, nome, telefone, produtos_no_carrinho, carrinho_lembrado
         FROM Usuarios 
         WHERE ultimo_acesso <= DATE_SUB(NOW(), INTERVAL 5 DAY)
-        AND carrinho_lembrado = 0
     `;
 
     pool.query(sqlUsuarios, (err, usuarios) => {
@@ -84,11 +83,11 @@ async function verificarCarrinhosAbandonados(client) {
                     client.sendText(usuario.telefone, mensagem)
                         .then(() => {
                             console.log(`Lembrete enviado para ${usuario.nome}`);
-                            // Atualizar flag de carrinho lembrado
-                            const sqlUpdate = 'UPDATE Usuarios SET carrinho_lembrado = 1 WHERE id = ?';
+                            // Incrementar contador de lembretes
+                            const sqlUpdate = 'UPDATE Usuarios SET carrinho_lembrado = carrinho_lembrado + 1 WHERE id = ?';
                             pool.query(sqlUpdate, [usuario.id], (err) => {
                                 if (err) {
-                                    console.error(`Erro ao atualizar flag de lembrete para ${usuario.nome}:`, err);
+                                    console.error(`Erro ao atualizar contador de lembretes para ${usuario.nome}:`, err);
                                 }
                             });
                         })
@@ -98,6 +97,36 @@ async function verificarCarrinhosAbandonados(client) {
                 console.error('Erro ao processar produtos do carrinho:', error);
             }
         });
+    });
+}
+
+// Função para responder perguntas frequentes
+async function responderFAQ(message, client) {
+    const pergunta = message.body.toLowerCase();
+    const numeroContato = message.from;
+
+    // Buscar todas as perguntas e respostas
+    const sqlFAQ = 'SELECT pergunta, resposta FROM FAQ';
+    
+    pool.query(sqlFAQ, (err, faqs) => {
+        if (err) {
+            console.error('Erro ao buscar FAQ:', err);
+            client.sendText(numeroContato, '❌ Desculpe, ocorreu um erro ao buscar a resposta. Tente novamente.');
+            return;
+        }
+
+        // Verificar cada pergunta
+        for (const faq of faqs) {
+            const palavrasChave = faq.pergunta.split(',').map(p => p.trim().toLowerCase());
+            
+            // Verificar se alguma palavra-chave está na pergunta
+            if (palavrasChave.some(palavra => pergunta.includes(palavra))) {
+                client.sendText(numeroContato, faq.resposta);
+                return;
+            }
+        }
+
+        // Se não encontrou resposta, enviar mensagem padrão
     });
 }
 
@@ -117,7 +146,8 @@ wppconnect.create({
 }).then(client => {
     console.log('✅ Conectado ao WhatsApp!');
 
-    setInterval(() => verificarCarrinhosAbandonados(client), 1000);
+    // Executar verificação a cada 30 segundos
+    setInterval(() => verificarCarrinhosAbandonados(client), 30000);
 
     client.onMessage(async message => {
         console.log('📩 Mensagem recebida:', message.body);
@@ -126,6 +156,9 @@ wppconnect.create({
         // Atualizar último acesso do usuário
         const sqlAtualizarAcesso = 'UPDATE Usuarios SET ultimo_acesso = NOW() WHERE telefone = ?';
         pool.query(sqlAtualizarAcesso, [numeroContato]);
+
+        // Responder perguntas frequentes
+        await responderFAQ(message, client);
 
         // 📌 Listar Usuários
         if (message.body.trim().toLowerCase().includes("listar")) {
@@ -142,7 +175,8 @@ wppconnect.create({
                         results.forEach((usuario, index) => {
                             response += `\n🆔 ID: ${index + 1}` +
                                         `\n📌 Nome: ${usuario.nome}` +
-                                        `\n📞 Telefone: ${usuario.telefone}\n`;
+                                        `\n📞 Telefone: ${usuario.telefone}` +
+                                        `\n🔄 Lembretes: ${usuario.carrinho_lembrado}\n`;
                         });
                         client.sendText(numeroContato, response);
                     }
@@ -150,6 +184,7 @@ wppconnect.create({
             });
             return;
         }
+
         if (message.body.trim().toLowerCase().includes("teste")){
             client.sendText(numeroContato, '✅ Funcionando!');
         }

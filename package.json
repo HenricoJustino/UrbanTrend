@@ -1,7 +1,7 @@
 {
     "name": "urbantrend-bot",
     "version": "1.0.0",
-    "description": "Bot de WhatsApp para gerenciamento de encomendas",
+    "description": "Bot de WhatsApp para lembrar usuários de carrinho de compras esquecidos na UrbanTrend(empresa fictícia)",
     "main": "bot.js",
     "scripts": {
         "start": "node bot.js"
