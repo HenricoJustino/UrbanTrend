@@ -1,3 +1,6 @@
-2025/04/13-13:19:19.603 4 Reusing MANIFEST /home/henrico/Documentos/Documentos/Atividades do IF/Sistemas de Informação/Período I/Gestão e Empreendedorismo/SEF/urbantrend/tokens/whatsapp-session/Default/Local Storage/leveldb/MANIFEST-000001
-2025/04/13-13:19:19.616 4 Recovering log #4
-2025/04/13-13:19:19.618 4 Reusing old log /home/henrico/Documentos/Documentos/Atividades do IF/Sistemas de Informação/Período I/Gestão e Empreendedorismo/SEF/urbantrend/tokens/whatsapp-session/Default/Local Storage/leveldb/000004.log 
+2025/04/14-09:04:18.985 4 Reusing MANIFEST /home/henrico/Documentos/Documentos/Atividades do IF/Sistemas de Informação/Período I/Gestão e Empreendedorismo/SEF/urbantrend/tokens/whatsapp-session/Default/Local Storage/leveldb/MANIFEST-000001
+2025/04/14-09:04:18.999 4 Recovering log #4
+2025/04/14-09:04:19.001 4 Reusing old log /home/henrico/Documentos/Documentos/Atividades do IF/Sistemas de Informação/Período I/Gestão e Empreendedorismo/SEF/urbantrend/tokens/whatsapp-session/Default/Local Storage/leveldb/000004.log 
+2025/04/14-09:06:19.539 4 Level-0 table #8: started
+2025/04/14-09:06:19.545 4 Level-0 table #8: 16813 bytes OK
+2025/04/14-09:06:19.550 4 Delete type=0 #4
